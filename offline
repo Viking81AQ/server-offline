@@ -6,74 +6,107 @@
     <title>Server OFFLINE</title>
     <style>
         body {
-            background: linear-gradient(135deg, #ff4b5c, #ff6f91);
-            font-family: 'Arial', sans-serif;
             margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #1a1a1a;
             color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
         }
         .container {
             text-align: center;
             padding: 40px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            max-width: 80%;
+            min-width: 300px;
         }
         h1 {
-            font-size: 80px;
+            font-size: 60px;
             font-weight: bold;
-            color: #ff0000;
-            text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             margin: 0;
-            animation: shake 1s ease-in-out infinite;
+            animation: fadeIn 2s ease-out;
         }
         p {
-            font-size: 20px;
+            font-size: 22px;
             margin-top: 20px;
-            color: #fff;
-            opacity: 0.8;
+            opacity: 0.9;
+            animation: fadeIn 3s ease-out;
         }
-        @keyframes shake {
-            0%, 100% {
-                transform: translateX(0);
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            25% {
-                transform: translateX(-10px);
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
-            50% {
-                transform: translateX(10px);
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #ff4b5c;
+            font-weight: bold;
+            font-size: 80px;
+        }
+        .glitch:after {
+            content: 'SERVER OFFLINE';
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            color: #00f4f1;
+            z-index: -1;
+            animation: glitchEffect 1.5s infinite linear alternate-reverse;
+        }
+        @keyframes glitchEffect {
+            0% {
+                transform: translate(-3px, -3px);
             }
-            75% {
-                transform: translateX(-10px);
+            20% {
+                transform: translate(3px, 3px);
+            }
+            40% {
+                transform: translate(-5px, 5px);
+            }
+            60% {
+                transform: translate(5px, -5px);
+            }
+            80% {
+                transform: translate(-3px, -3px);
+            }
+            100% {
+                transform: translate(3px, 3px);
             }
         }
         .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
+            margin-top: 40px;
+            padding: 15px 30px;
             background-color: #ff4b5c;
             color: #fff;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
+            font-size: 18px;
             font-weight: bold;
-            letter-spacing: 2px;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #ff6f91;
+            background-color: #00f4f1;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>SERVER OFFLINE</h1>
-        <p>Il server non è attualmente disponibile. Riprova più tardi.</p>
-        <a href="#" class="button">Riprova</a>
+        <h1 class="glitch">SERVER OFFLINE</h1>
+        <p>Il server non è al momento disponibile. Torna più tardi.</p>
+        <button class="button" onclick="window.location.reload()">Riprova</button>
     </div>
 </body>
 </html>
