@@ -6,17 +6,74 @@
     <title>Server OFFLINE</title>
     <style>
         body {
+            background: linear-gradient(135deg, #ff4b5c, #ff6f91);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
             text-align: center;
-            padding: 50px;
-            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            color: red;
+            font-size: 80px;
+            font-weight: bold;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+            animation: shake 1s ease-in-out infinite;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #fff;
+            opacity: 0.8;
+        }
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+        }
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #ff4b5c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff6f91;
         }
     </style>
 </head>
 <body>
-    <h1>Server OFFLINE</h1>
-    <p>Il server non è attualmente disponibile. Riprova più tardi.</p>
+    <div class="container">
+        <h1>SERVER OFFLINE</h1>
+        <p>Il server non è attualmente disponibile. Riprova più tardi.</p>
+        <a href="#" class="button">Riprova</a>
+    </div>
 </body>
 </html>
